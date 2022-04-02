@@ -1,7 +1,7 @@
-FROM golang:1.18-alpine
+FROM golang:1.18-buster AS builder
 
-RUN apk update && \
-  apk add bash alpine-sdk --no-cache
+RUN apt update && \
+    apt install build-essential -y
 
 WORKDIR /app
 
@@ -9,4 +9,9 @@ COPY . .
 
 RUN make build
 
-CMD [ "./bin/main" ]
+FROM alpine:latest
+
+COPY --from=builder /app/bin/main /app/main
+WORKDIR /app
+
+CMD ["./main"]
