@@ -14,4 +14,6 @@ FROM alpine:latest
 COPY --from=builder /app/bin/main /app/main
 WORKDIR /app
 
+RUN mkdir /results
+
 CMD ["./main"]
