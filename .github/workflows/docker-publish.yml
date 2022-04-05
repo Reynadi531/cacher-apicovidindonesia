@@ -37,7 +37,7 @@ jobs:
         uses: docker/build-push-action@master
         with:
           push: true
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+          tags: ghcr.io/reynadi531/cacher-apicovidindonesia:latest
 
       - name: Sign the container image
         env:
