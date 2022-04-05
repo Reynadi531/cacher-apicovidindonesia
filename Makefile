@@ -13,4 +13,4 @@ docker.push:
 	docker push ghcr.io/reynadi531/$(APP_NAME):latest
 
 docker.run:
-	docker run -v $(PWD)/results:/app/results ghcr.io/reynadi531/$(APP_NAME):latest
+	docker run -v results:/app/results ghcr.io/reynadi531/$(APP_NAME):latest

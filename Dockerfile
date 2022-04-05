@@ -9,11 +9,13 @@ COPY . .
 
 RUN make build
 
-FROM alpine:latest
+FROM debian:buster-slim
 
 COPY --from=builder /app/bin/main /app/main
 WORKDIR /app
 
-RUN mkdir /results
+RUN mkdir ./results
+
+RUN chmod +x ./main
 
 CMD ["./main"]
