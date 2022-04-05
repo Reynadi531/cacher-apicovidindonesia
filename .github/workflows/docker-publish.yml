@@ -3,7 +3,10 @@ name: Create and publish a Docker image
 
 on:
   push:
-    branches: ['main']
+    branches: ['main']  
+    paths-ignore:
+    - 'results/***'
+    - '***.md'
 
 env:
   REGISTRY: ghcr.io
