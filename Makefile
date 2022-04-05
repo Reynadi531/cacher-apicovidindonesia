@@ -6,11 +6,14 @@ build:
 run:
 	go run .
 
+docker.pull:
+	docker pull ghcr.io/reynadi531/$(APP_NAME):main
+
 docker.build:
-	docker build . -t ghcr.io/reynadi531/$(APP_NAME):latest -f Dockerfile
+	docker build . -t ghcr.io/reynadi531/$(APP_NAME):main -f Dockerfile
 
 docker.push:
-	docker push ghcr.io/reynadi531/$(APP_NAME):latest
+	docker push ghcr.io/reynadi531/$(APP_NAME):main
 
 docker.run:
-	docker run -v $(PWD)/results:/app/results ghcr.io/reynadi531/$(APP_NAME):latest
+	docker run -v $(PWD)/results:/app/results ghcr.io/reynadi531/$(APP_NAME):main
