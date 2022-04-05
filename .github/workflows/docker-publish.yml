@@ -5,8 +5,8 @@ on:
   push:
     branches: ['main']  
     paths-ignore:
-    - 'results/***'
-    - '***.md'
+    - 'results/**'
+    - '**.md'
 
 env:
   REGISTRY: ghcr.io
